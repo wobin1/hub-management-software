@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+      <div class="page-content">
+        <div class="page-header">
+          <div class="container-fluid">
+            <h2 class="h5 no-margin-bottom">Dashboard</h2>
+          </div>
+        </div>
+      
+
+    
+        <section>
+          <div class="container-fluid">
+            <div class="row">
+
+              <div class="col-lg-2"></div>
+
+              <form action="" method="POST">
+                <div class="mb-3">
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="email" name="email">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">password</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="password" name="password">
+                  </div>
+
+
+
+                  <button type="submit" class="btn btn-outline-secondary">Login</button>
+            </form>
+
+              <div class="col-lg-2"></div>
+
+
+            </div>
+          </div>
+        </section>
+{% endblock content %}
