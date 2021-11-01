@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template
 from flask_login import login_required, current_user
+from .models import Admin, Subscriber
 
 views = Blueprint('views', __name__)
 
@@ -7,10 +8,13 @@ views = Blueprint('views', __name__)
 @views.route('/')
 @login_required
 def index():
-    return render_template('index.html', user=current_user)
+    subscribers = Subscriber.query.all()
+    print(subscribers)
+    return render_template('index.html', user=current_user )
 
 @views.route('/subscriber_detail')
 def subscriber_detail():
+    
     return render_template('subscriber_detail.html')
 
 @views.route('/subscribers_with_balance')

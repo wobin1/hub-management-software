@@ -219,10 +219,10 @@
           {% if user.is_authenticated %}
           <li class="active"><a href="{{url_for('views.index')}}"> <i class="icon-home"></i>Home </a></li>
           <li><a href="{{url_for('auth.create_subscriber')}}"> <i class="icon-grid"></i>Create Subscribers </a></li>
-          <li><a href="{{url_for('auth.create_admin')}}"> <i class="fa fa-bar-chart"></i>Create Admin </a></li>
+          {% if user.role==admin %}
+          <li><a href="{{url_for('auth.create_user')}}"> <i class="fa fa-bar-chart"></i>Create Admin </a></li>
+          {%endif%}
           <li><a href="{{url_for('auth.create_subscriber')}}"> <i class="icon-padnote"></i>Forms </a></li>
-          {% else %}
-          <li><a href="login.html"> <i class="icon-logout"></i>Superadmin login </a></li>
           {% endif %}
         </ul><span class="heading">Extras</span>
       </nav>
