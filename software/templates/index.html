@@ -34,12 +34,12 @@
                   </thead>
                   <tbody>
                     <tr>
-                      {% for subscriber in subscribers %}
-                      <th scope="row">{{subscriber.id}}</th>
-                      <td>{{subscriber.firstname}} {{subscriber.lastname}}</td>
-                      <td>{{subscriber.email}}</td>
-                      <td>{{subscriber.phonenumber}}</td>
-                      {% endfor %}
+                      
+                      <th scope="row">{{subscribers.id}}</th>
+                      <td>{{subscribers.firstname}} {{subscribers.surname}}</td>
+                      <td>{{subscribers.email}}</td>
+                      <td>{{subscribers.phonenumber}}</td>
+                     
                     </tr>
                    
                   </tbody>

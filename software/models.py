@@ -29,6 +29,9 @@ class Subscriber(db.Model):
     phonenumber = db.Column(db.String(20), nullable=False)
     address = db.Column(db.String(100), nullable=False)
 
+    def __str__(self):
+        return f"{self.id}, {self.firstname}"
+
 
 
 

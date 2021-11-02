@@ -9,8 +9,11 @@ views = Blueprint('views', __name__)
 @login_required
 def index():
     subscribers = Subscriber.query.all()
-    print(subscribers)
-    return render_template('index.html', user=current_user )
+    user = current_user
+    
+   
+    
+    return render_template('index.html',   )
 
 @views.route('/subscriber_detail')
 def subscriber_detail():
