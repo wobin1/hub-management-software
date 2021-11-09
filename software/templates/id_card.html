@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+      <div class="page-content">
+        <div class="page-header">
+          <div class="container-fluid">
+            <h2 class="h5 no-margin-bottom">Dashboard</h2>
+          </div>
+        </div>
+   
+      <h1>{{subscriber}}</h1>
+
+
+      
+
+
+
+    
+        <section>
+          <div class="container-fluid">
+            <div class="row">
+
+            <div class="col-lg-3"></div>
+
+                <!-- Id Card Section -->
+            <div class="col-lg-6">
+                <div class="card" style="width: 18rem;">
+                    <!-- profile image -->
+                    <img class="rounded-circle mx-auto d-block" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title text-center">{{sub.firstname}} {{sub.surname}}</h5>
+                      <p class="card-text text-center">Some quick example text to </p>
+                    </div>
+                    <!-- qrcode -->
+                    <div class="text-center">
+                        <img  src="{{ url_for('static', filename='qrcode/Subscribers/.jpg') }}" class="rounded" alt="QRcode">
+                      </div>
+                    <div class="card-body">
+                        <h6>Verified by <span class="badge badge-secondary">Harmony Innovation Hub</span></h6>
+                    </div>
+                  </div>
+            </div>
+
+
+            <div class="col-lg-3"></div>
+
+            </div>
+          </div>
+        </section>
+{% endblock content %}

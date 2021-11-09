@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+      <div class="page-content">
+        <div class="page-header">
+          <div class="container-fluid">
+            <h2 class="h5 no-margin-bottom">Dashboard</h2>
+          </div>
+        </div>
+      
+
+    
+        <section>
+          <div class="container-fluid">
+            <div class="row">
+
+              <div class="col-lg-2"></div>
+
+              <form action="" method="POST">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" value="{{sub.firstname}}" name="sub_firstname">
+                  </div>
+            
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Surname</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" value="{{sub.surname}}" name="sub_surname">
+                  </div>
+            
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">email</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" value="{{sub.email}}" name="sub_email">
+                  </div>
+            
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" value="{{sub.phonenumber}}" name="sub_phonenumber">
+                  </div>
+            
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">address</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" value="{{sub.address}}" name="sub_address">
+                  </div>
+
+                  <button type="submit" class="btn btn-outline-secondary">Submit</button>
+            </form>
+
+              <div class="col-lg-2"></div>
+
+
+            </div>
+          </div>
+        </section>
+{% endblock content %}

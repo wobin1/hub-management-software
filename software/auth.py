@@ -4,6 +4,7 @@ import werkzeug
 from .models import Admin, Subscriber
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
+import qrcode
 
 auth= Blueprint('auth', __name__)
 
@@ -75,6 +76,8 @@ def create_user():
             new_user = Admin(firstname=firstname, surname=surname, email=email, phonenumber=phonenumber, address=address, role=role, password=generate_password_hash(password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
+
+            
             flash("Account created !!!!", category= 'success')
         return redirect(url_for('views.index'))
     return render_template('create_user.html', user=current_user)
