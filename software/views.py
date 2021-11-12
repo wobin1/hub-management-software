@@ -57,10 +57,10 @@ def subscriber_delete(id):
 
 
 # Generate Id
-@views.route('/generate_id/<int:id>')
+@views.route('/view_id/<int:id>')
 def generate_id(id):
     query = Subscriber.query.get_or_404(id)
-
+    imageUrl = 'qrcode/subscribers/query.jpg'
     
     return render_template('id_card.html', user=current_user, sub=query)
 
