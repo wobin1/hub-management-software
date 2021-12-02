@@ -5,6 +5,10 @@ from . import db
 import qrcode
 from PIL import Image
 import os
+import cv2
+import numpy as numpy
+import pyzbar.pyzbar as pyzbar
+ 
 
 views = Blueprint('views', __name__)
 
@@ -78,4 +82,25 @@ def generate_qr(id):
     imagepath = os.path.join(path, f"{user.id}.jpg")
     img.save(imagepath)    
     return "QR generated sucessfully!!!!!"
+
+
+@views.route('read_')
+
+@views.route('/read_qrcode')
+def read_qrcode():
+    cap = cv2.VideoCapture(0)
+
+
+    while True:
+        _, frame = cap.read()
+
+        decodedObjects = pyzbar.decode(frame)
+        for obj in decodedObjects:
+            print("Data", obj.data)
+
+        cv2.imshow("Frame", frame)
+
+        key = cv2.waitKey(1)
+        if key == 27:
+            break
 
